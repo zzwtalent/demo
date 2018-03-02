@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<iostream>
 #include "testfunc.h"
+#include "testfile.h"
 
 class CTestClass{
 public:

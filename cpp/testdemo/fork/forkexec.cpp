@@ -14,13 +14,15 @@ int fork_test()
 	}else if(ret == 0)
 	{
 		printf("I am child.pid[%d].ppid[%d]\n", getpid(), getppid());
-//		char * execvp_str[] = {"echo", "hello,I am child!", NULL};
-		char * execvp_str[] = {"ping", "www.baidu.com", NULL};
-		if(execvp("ping", execvp_str)<0){
+		char * execvp_str[] = {"echo", "hello,I am child!", NULL};
+//		char * execvp_str[] = {"ping", "www.baidu.com", NULL};
+//		if(execvp("ping", execvp_str)<0){
+		if(execvp("echo", execvp_str)<0){
 /* 如果exec函数返回，表明没有正常执行命令，打印错误信息*/
 			perror("error on exec");
 			exit(3);
 		}
+		printf("child execvp done\n");
 	}else{
 		printf("I am parent.pid[%d].ppid[%d]\n", getpid(), getppid());
 		wait(&status);
