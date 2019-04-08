@@ -1,4 +1,4 @@
-TARGET=fork forkexec
+TARGET=fork forkexec vfork vfork_exec
 .PHONY:all
 all:$(TARGET)
 
